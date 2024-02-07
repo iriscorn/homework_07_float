@@ -1,0 +1,16 @@
+.main__section--mod {
+    background-color: $add_main-color; // фоновий колір для секції
+    width: 58%; // задаю ширину для секцію
+    margin: 0 auto; // вирівнювання по центру
+    
+    .main__section__link {
+        width: 25%; // ширина для контейнера
+        text-align: center;
+        padding: 35px 0; // відступи
+        border: 1px solid $main_color; // задаю границю
+        float: left; // ставлю блоки в лінію
+    }
+    &::after {
+        @include clear_fix; // підключаю mixin з clear fix для батьківської секції
+    }    
+}

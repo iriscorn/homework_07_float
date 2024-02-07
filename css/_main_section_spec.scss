@@ -1,0 +1,56 @@
+.main__section--spec {
+    padding: 100px 0; // відступи по вертикалі
+    width: 58%; // ширина для секції
+    margin: 0 auto; // вирівнюваня по центру
+    
+    .section__container--additional {
+        background-color: $primary_color; // фон
+        padding: 35px 45px 35px 40px; // відступи
+        width: 49%; // задаю ширину
+        float: left; // блоки в лінію
+        position: relative; // точка позиціонування
+        
+        .section__container--mod {
+            float: left; // блоки в лінію
+            .section__container__heading {
+                @include font_style ($add_main-color, 700, 1.125rem); // mixin для тексту
+            }
+            .section__container__text {
+                @include font_style ($add_main-color, 400, 0.875rem); // mixin для тексту
+                padding: 25px 0; // відступи по вертикалі
+            }
+            .section__container__btn {
+                @include btn ($add_main-color, $primary_color, $add_main-color); // mixin для кнопки
+                padding: 9px 0; // відступи по вертикалі
+            }
+            .section__container__btn:hover {
+                @include btn ($add_main-color, $add_main-color, $additional_color); // mixin для кнопки
+                padding: 9px 0; // відступи по вертикалі
+                transition: all 1s; // плавна зміна при наведенні
+                cursor: pointer;
+            }
+        }
+        &:nth-last-child(1) {
+            margin-left: 2%; // відступ ліворуч
+        }
+        &::after {
+            @include clear_fix; // підключаю mixin з clear fix для батьківської секції
+        }
+        .section__container--mod input {
+            border-radius: 30px; // округлі кути
+            padding: 9px 0 9px 11%; // відступи
+        }
+        .section__container__img {
+            position: absolute; // абсолютне позиціювання відносно relative
+            right: 45px; // відступ від правої межі
+        }
+        .section__container__img--mod {
+            position: absolute; // абсолютне позиціювання відносно relative
+            top: 56px; // відступ від верхньої межі
+            right: 45px; // відступ від правої межі
+        }
+    }
+    &::after {
+        @include clear_fix; // підключаю mixin з clear fix для батьківської секції
+    }
+}

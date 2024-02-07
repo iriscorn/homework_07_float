@@ -1,0 +1,51 @@
+.main__heading {
+    @include font_style ($additional_color, 700, 1.5rem); // mixin з параметрами для тексту
+    padding:80px 21% 38px; // відступи 
+}
+
+.main__section {
+    width: 58%; // задаю ширину
+    margin: 0 auto; // вирівнювання по центу
+    
+    .main__section--item {
+        width: 23.5%; // ширина для контейнерів
+        background-color: $add_main-color; // фон
+        padding: 25px 30px; // внутрішні відступи
+        float: left; // ставлю блоки в лінію
+        margin-right: 2%; // відступ праворуч
+        text-align: center; // вирівнювання тексту по центру
+
+
+        .main__section__text {
+            @include font_style ($secondary_color, 400, 0.875rem); // mixin з параметрами для тексту
+            padding: 20px 0; // відступи по вертикалі
+            line-height: 140.625%;
+        }
+        .main__section__item {
+            @include font_style ($additional_color, 500, 1.3125rem); // mixin з параметрами для тексту
+            padding-bottom: 20px; // нижній відступ
+        }
+        .main__section__btn {
+            margin: 0 auto; // вирівнювання по центру
+            width: 130px; // ширина для кнопки
+            display: block; // роблю кнопку блочним елементом щоб працювали відступи
+            border-radius: 30px; // округлі кути 
+            padding: 9px 0; // внутрішні відступи по вертикалі
+            margin-top: 20px; // відступ від верхнього блоку 
+            background-color: $primary_color; // фон
+            color: $add_main-color; // колір для тексту
+        }
+        .main__section__btn:hover {
+            background-color: $main_color; // фон
+            color: $additional_color; // колір для тексту
+            transition: all 1s; // для плавної зміни всіх елементів
+            cursor: pointer;
+        }
+        &:nth-last-child(1) {
+            margin-right: 0; // обнуляю відступ для останнього блоку
+        }
+    }
+    &::after {
+        @include clear_fix; // підключаю mixin з clear fix для батьківської секції
+    }
+}

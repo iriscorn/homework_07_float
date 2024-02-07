@@ -1,0 +1,32 @@
+//  Шрифт
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); // підключаю шрифти
+
+//Змінні
+$main_color: #efefef;
+$add_main-color: #fff;
+$primary_color: #F13C6E; // задаю змінні
+$secondary_color: #333;
+$additional_color: #000;
+
+//Reset
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: normal; 
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;
+    background-color: #EFEFEF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}

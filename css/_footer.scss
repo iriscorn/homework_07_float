@@ -1,0 +1,93 @@
+.footer {
+    background-color: $add_main-color;  //задаю фон з використанням змінної
+    margin-top: 80px; //відступ зверху
+
+    .footer__section {
+        width: 58%; //задаю ширину для секції
+        padding: 60px 0; //відступи зверху та знизу
+        margin: 0 auto; //вирівнюю по середині
+
+        .footer__container {
+            float: left; // ставлю блоки в лінію
+            width: 23.5%; //задаю ширину для контейнерів у відсотках з урахуванням відступу не для всих контейнерів
+            margin-right: 2%; //відступ між контейнерами
+
+            .footer__container__heading {
+                @include font_style ($additional_color, 500, 1rem); //mixin з параметрами для тексту
+                padding-bottom: 30px; //відступ знизу
+                border-bottom: 1px solid $main_color; // границя
+            }
+            .foter__nav {
+                padding-top: 25px; //відступ зверху
+
+                .footer__list {
+                    .footer__list {
+                        @include font_style (#828282, 400, 0.75rem); //mixin з параметрами для тексту
+                        line-height: 28px;
+                    }
+                }
+            }
+            &:nth-last-child(1) {
+                margin-right: 0; // прибираю відступ для останнього контейнера
+            }
+        }
+        &::after {
+            @include clear_fix; // підключаю mixin з clear fix для батьківської секції
+        }    
+    }
+    .footer__section--spec {
+        width: 58%; // задаю ширину для секції
+        padding: 38px 0; // відступи зверху та знизу
+        margin: 0 auto; // вирівнюю по середині
+        border-top: 1px solid $main_color; // задаю лише верхню границю
+        
+        .footer__container--mod {
+            float: left; // ставлю блоки в лінію
+
+            .footer__container__link {
+                margin-right: 20px; // відступ праворуч
+
+                &:nth-last-child(1) {
+                    margin-right: 0; // прибираю відступ для останнього контейнера
+                }
+            }
+        }
+        .footer__container--spec {
+            float: right; // щоб контейнер був праворуч
+            align-items: center; // вирівнюю текст по центру
+
+            .foter__container__link--mod {
+                color: $additional_color; // колір тексту
+            }
+            .footer__btn {
+                margin-left: 40px; // відступ ліворуч
+                @include btn ($primary_color, $add_main-color, $additional_color); // mixin з параметрами для кнопки
+                padding: 12px 0;
+            }
+            .footer__btn:hover {
+                background-color: $primary_color; // фон
+                color: $add_main-color; // колір для тексту
+                transition: all 1s; // для плавної зміни всіх елементів
+                cursor: pointer;
+            }
+        }
+        &::after {
+            @include clear_fix; // підключаю mixin з clear fix для батьківської секції
+        } 
+    }
+    .footer__section--mod {
+        background-color: $main_color;
+        padding: 25px 21%; // роблю відступи 
+        .foter__section__text {
+            float: right; // ставлю блок праворуч
+            @include font_style (#828282, 400, 0.75rem); //mixin з параметрами для тексту
+        }
+        .foter__section__text--mod {
+            float: left; // ставлю блок ліворуч
+            @include font_style (#828282, 400, 0.75rem); //mixin з параметрами для тексту
+        }
+        &::after {
+            @include clear_fix; // підключаю mixin з clear fix для батьківської секції
+        }
+    }
+}

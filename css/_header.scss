@@ -1,0 +1,99 @@
+.header {
+	background-color: $add_main-color; // фон
+
+	.header__section__nav {
+		background-color: $main_color; // фон
+		padding: 17px 0; // відступи
+
+		.header__nav {
+			margin: 0 auto; // вирівнювання по центру
+			width: fit-content; // ширина від контенту
+
+			.nav__list {
+				float: left; // блоки в лінію
+				margin-right: 30px; // відступ праворуч
+
+				.nav__link {
+					color: $secondary_color; // колір тексту
+					font-size: 0.875rem; // розмір тексту
+				}
+				&:nth-last-child(1) {
+					margin-right: 0; // обнуляю відступ прворуч для останнбого елемента
+				}
+			}
+			&::after {
+				@include clear_fix; // підключаю mixin з clear fix для батьківської секції
+			}
+		}
+	}
+	//logo
+	.header__sectiom__logo {
+		border-bottom: 1px solid $main_color;
+		padding: 20px 21%; // відступи
+
+		.section__container {
+			.header__link--mod {
+				display: block; // роблю блок із строчного елемента
+				
+				.header__link__name {
+					@include font_style ($primary_color, 700, 2.25rem); 
+					letter-spacing: 0.225rem;
+					text-transform: uppercase;
+					line-height: 80px;
+				}
+				.header__link__logo {
+					float: left; // ставлю блоки в лінію
+					margin-right: 20px; // відступ праворуч
+				}
+			}
+			.section__subcontainer {
+				.header__link {
+					color: $additional_color; // колір тексту
+				}
+				.header__btn {
+					@include btn($primary_color, $add_main-color, $additional_color);
+					padding: 12px 0; // відступи по вертикалі
+					margin-left: 40px // відступ ліворуч
+				}
+				.header__btn:hover {
+					background-color: $primary_color; // фон
+					color: $add_main-color; // колір для тексту
+					transition: all 1s; // плавність при наведенні
+					cursor: pointer;
+				}
+			}
+			&:nth-child(1) {
+				float: left; // ставлю блок ліворуч
+			}
+			&:nth-child(2) {
+				float: right; // ставлю блок праворуч
+				line-height: 80px;
+			}
+		}
+		&::after {
+			@include clear_fix; // підключаю mixin з clear fix для батьківської секції
+		}
+	}
+
+	.header__section__subnav {
+		.header__subnav {
+			width: fit-content; // ширина від контенту
+			padding: 30px 0; // відступи по вертикалі
+			margin: 0 auto; // вирівнювання по центру
+
+			.nav__list {
+				float: left; // ставлю блоки в лінію
+				margin-right: 40px; // відступ праворуч
+				.subnav__link {
+					color: $additional_color; // колір тексту
+				}
+				&:nth-last-child(1) {
+					margin-right: 0; // обнуляю відступ праворуч для останнього елемента 
+				}
+			}
+			&::after {
+				@include clear_fix; // підключаю mixin з clear fix для батьківської секції
+			}
+		}
+	}
+}

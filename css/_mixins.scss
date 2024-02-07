@@ -1,0 +1,20 @@
+@mixin font_style ($color, $weight, $size) {
+    color: $color;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+@mixin btn ($border-color, $back-color, $font-color) {
+    width: 170px;
+    border-radius: 40px;
+    border: 2px solid $border-color;
+    background-color: $back-color;
+    color: $font-color;
+    font-size: 0.875rem;
+}
+
+@mixin clear_fix { 
+    content: "";
+    display: table;
+    clear: both;
+}

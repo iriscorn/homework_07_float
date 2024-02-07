@@ -1,0 +1,23 @@
+.main__logo {
+    background: url(../img/banner.svg) lightgray 50% / cover no-repeat; //фонове зображення
+    padding: 192px 21%; // відступи
+    
+    .main__logo__heading {
+        @include font_style ($add_main-color, 700, 3rem); //mixin з параметрами для тексту
+    }
+    .main__logo__text {
+        @include font_style ($add_main-color, 400, 0.875rem); //mixin з параметрами для тексту
+        padding: 50px 0 30px; // відступи по вертикалі
+    }
+    .main__logo__btn {
+        display: block; // роблю кнопку блочним елементом для задання відступів
+        text-align: center; // вирівнювання тексту по центру
+        @include btn ($add_main-color, $primary_color, $add_main-color); // mixin з параметрами для кнопки
+        padding: 12px 0; // відступи по вертикалі
+    }
+    .main__logo__btn:hover {
+        @include btn ($add_main-color, $add_main-color, $additional_color); // mixin з параметрами для кнопки
+        transition: all 1s; // для плавної зміни всіх елементів
+        cursor: pointer;
+    }
+}
